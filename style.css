@@ -1,1 +1,25 @@
-/* Add your CSS here */
+/* Basic page styles */
+body {
+	background-color: #f5f5f5; /* Light background color */
+	color: #222; /* Dark text color */
+	font-family: Arial, sans-serif; /* Simple font */
+	margin: 0;
+	padding: 0;
+}
+
+/* Header styles */
+header {
+	text-align: center; /* Center the logo */
+	padding: 20px 0; /* Space above and below */
+	background-color: #0071c5; /* Intel blue */
+}
+
+/* Logo image styles */
+.logo {
+	width: 150px; /* Set logo width */
+}
+
+/* Main content styles */
+main {
+	padding: 20px; /* Space around content */
+}
