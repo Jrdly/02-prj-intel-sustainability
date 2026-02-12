@@ -50,6 +50,7 @@
 	scroll-snap-type: x mandatory; /* Magnetic scroll */
 	gap: 16px; /* Space between cards */
 	padding: 16px 0; /* Space above and below */
+	margin: 0 10%; /* Large margin from sides */
 }
 
 /* Timeline card styles */
@@ -73,7 +74,7 @@
 .timeline-card img {
 	max-width: 100%; /* Image fits card width */
 	height: auto; /* Keep image aspect ratio */
-	border-radius: 4px; /* Slightly rounded corners */
+	border-radius: 12px; /* Rounded corners */
 	margin-bottom: 12px; /* Space below image */
 /* Timeline card images: set width, height, and object-fit */
 	width: 100%; /* Make image fill the card horizontally */
@@ -106,7 +107,7 @@ header {
 
 /* Header typography */
 header h1 {
-	font-weight: 300; /* Modern, light heading weight */
+	font-weight: 700; /* Bold heading weight */
 	margin: 0 0 16px; /* Spacing */
 	font-size: 3rem; /* Larger title */
 	text-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle text shadow */
@@ -144,6 +145,7 @@ main {
 		width: 100%; /* Container fits screen */
 		padding: 16px; /* Add padding so cards don't touch screen edges */
 		box-sizing: border-box; /* Include padding in width */
+		margin: 0; /* Reset margin on mobile */
 	}
 	.timeline-card {
 		min-width: 0; /* Allow cards to shrink */
