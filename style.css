@@ -1,17 +1,127 @@
+/* Timeline card text overlay styles */
+.timeline-card {
+	position: relative;
+	overflow: hidden;
+}
+
+.timeline-card .timeline-text {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	opacity: 0;
+	color: #fff;
+	background: rgba(0, 113, 197, 0.9); /* Intel Blue overlay */
+	transition: opacity 0.3s;
+	padding: 16px;
+	box-sizing: border-box;
+	text-align: center;
+}
+
+.timeline-card:hover .timeline-text {
+	opacity: 1;
+}
+
+.timeline-card h2 {
+	font-size: 1.4rem;
+	margin: 0;
+}
+
+.timeline-card h3 {
+	font-size: 1rem;
+	margin: 4px 0 0 0;
+	font-weight: 600;
+}
+
+.timeline-card p {
+	font-size: 0.8rem;
+	margin: 8px 0 0 0;
+	line-height: 1.3;
+}
+/* Timeline container styles */
+.timeline-container {
+	display: flex; /* Arrange cards side-by-side */
+	overflow-x: auto; /* Enable horizontal scrolling */
+	scroll-snap-type: x mandatory; /* Magnetic scroll */
+	gap: 16px; /* Space between cards */
+	padding: 16px 0; /* Space above and below */
+}
+
+/* Timeline card styles */
+.timeline-card {
+	min-width: 300px; /* Prevent cards from squishing */
+	width: 300px; /* Fix card width so images don't stretch it */
+	background: #fff; /* White card background */
+	border-radius: 8px; /* Rounded corners */
+	box-shadow: 0 2px 8px rgba(0,0,0,0.08); /* Soft shadow */
+	padding: 0; /* Remove inner space */
+	scroll-snap-align: start; /* Snap to start of card */
+	flex-shrink: 0; /* Prevent shrinking */
+	transition: box-shadow 0.2s;
+}
+
+.timeline-card:hover {
+	box-shadow: 0 4px 16px rgba(0,0,0,0.16); /* Stronger shadow on hover */
+}
+
+/* Timeline card images */
+.timeline-card img {
+	max-width: 100%; /* Image fits card width */
+	height: auto; /* Keep image aspect ratio */
+	border-radius: 4px; /* Slightly rounded corners */
+	margin-bottom: 12px; /* Space below image */
+/* Timeline card images: set width, height, and object-fit */
+	width: 100%; /* Make image fill the card horizontally */
+	height: 200px; /* Set a fixed height for all images */
+	object-fit: cover; /* Prevent stretching/squishing, crop if needed */
+	display: block; /* Remove gaps below image */
+	padding: 12px; /* Add space so image doesn't touch card borders */
+	box-sizing: border-box; /* Include padding in image size */
+}
 /* Basic page styles */
 body {
 	background-color: #f5f5f5; /* Light background color */
 	color: #222; /* Dark text color */
-	font-family: Arial, sans-serif; /* Simple font */
+	font-family: "Intel Clear", "Segoe UI", Tahoma, Arial, sans-serif; /* Clean, modern font */
 	margin: 0;
 	padding: 0;
+	line-height: 1.6; /* Better readability */
 }
 
 /* Header styles */
 header {
-	text-align: center; /* Center the logo */
-	padding: 20px 0; /* Space above and below */
+	display: flex; /* Use flexbox */
+	flex-direction: column; /* Stack items vertically */
+	align-items: center; /* Center items horizontally */
+	text-align: center; /* Center text */
+	padding: 40px 20px; /* Moar space */
 	background-color: #0071c5; /* Intel blue */
+	color: #ffffff; /* White text for contrast */
+}
+
+/* Header typography */
+header h1 {
+	font-weight: 300; /* Modern, light heading weight */
+	margin: 20px 0 10px; /* Spacing */
+	font-size: 2.5rem; /* Large title */
+}
+
+header p {
+	max-width: 600px; /* prevent line from getting too long */
+	margin: 0 auto; /* Center align the text block */
+	font-size: 1.1rem;
+	opacity: 0.9;
+}
+
+/* Header image styles */
+header img {
+	max-width: 300px;
+	height: auto;
 }
 
 /* Logo image styles */
@@ -22,4 +132,67 @@ header {
 /* Main content styles */
 main {
 	padding: 20px; /* Space around content */
+}
+/* Responsive styles for mobile screens */
+@media (max-width: 768px) {
+	.timeline-container {
+		flex-direction: column; /* Stack cards vertically */
+		overflow-x: visible; /* Allow normal vertical scrolling */
+		align-items: center; /* Center cards on mobile */
+		width: 100%; /* Container fits screen */
+		padding: 16px; /* Add padding so cards don't touch screen edges */
+		box-sizing: border-box; /* Include padding in width */
+	}
+	.timeline-card {
+		min-width: 0; /* Allow cards to shrink */
+		width: 100%; /* Card fills container */
+		max-width: 400px; /* Optional: limit max width for readability */
+		margin: 0; /* Let gap handle spacing */
+		height: auto; /* Allow card to grow for text */
+	}
+
+	/* Show text below image on mobile (no hover needed) */
+	.timeline-card .timeline-text {
+		position: relative; /* Normal flow, not absolute */
+		opacity: 1; /* Always visible */
+		background: transparent; /* Remove overlay background */
+		color: #333; /* Dark text for readability on white */
+		padding: 0 16px 16px; /* Padding below image */
+		text-align: left; /* Align text left */
+		height: auto; /* Auto height */
+		align-items: flex-start; /* Align text start */
+	}
+	.timeline-card h2 { color: #0071c5; } /* Blue title */
+	.timeline-card h3 { color: #555; } /* Dark grey subtitle */
+}
+
+/* Footer / Instruction text styling */
+body > p:last-of-type {
+  text-align: center;
+  color: #666;
+  font-size: 0.9rem;
+  margin: 30px 0;
+  font-style: italic;
+  font-weight: 500;
+}
+
+/* Custom Scrollbar for Timeline */
+.timeline-container::-webkit-scrollbar {
+  height: 10px;
+}
+
+.timeline-container::-webkit-scrollbar-track {
+  background: #e9e9e9;
+  border-radius: 5px;
+}
+
+.timeline-container::-webkit-scrollbar-thumb {
+  background: #0071c5; /* Intel Blue scrollbar */
+  border-radius: 5px;
+  border: 2px solid #e9e9e9; /* Padding around thumb */
+}
+
+.timeline-container::-webkit-scrollbar-thumb:hover {
+  background: #005a9e;
+}
 }
