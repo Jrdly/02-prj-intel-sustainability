@@ -99,7 +99,7 @@ header {
 	flex-direction: column; /* Stack items vertically */
 	align-items: center; /* Center items horizontally */
 	text-align: center; /* Center text */
-	padding: 40px 20px; /* Moar space */
+	padding: 80px 20px; /* Moar space */
 	background-color: #0071c5; /* Intel blue */
 	color: #ffffff; /* White text for contrast */
 }
@@ -107,8 +107,9 @@ header {
 /* Header typography */
 header h1 {
 	font-weight: 300; /* Modern, light heading weight */
-	margin: 20px 0 10px; /* Spacing */
-	font-size: 2.5rem; /* Large title */
+	margin: 0 0 16px; /* Spacing */
+	font-size: 3rem; /* Larger title */
+	text-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle text shadow */
 }
 
 header p {
@@ -127,6 +128,7 @@ header img {
 /* Logo image styles */
 .logo {
 	width: 150px; /* Set logo width */
+	margin-bottom: 20px; /* Space below logo */
 }
 
 /* Main content styles */
@@ -194,5 +196,4 @@ body > p:last-of-type {
 
 .timeline-container::-webkit-scrollbar-thumb:hover {
   background: #005a9e;
-}
 }
