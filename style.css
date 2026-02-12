@@ -55,8 +55,8 @@
 
 /* Timeline card styles */
 .timeline-card {
-	min-width: 300px; /* Prevent cards from squishing */
-	width: 300px; /* Fix card width so images don't stretch it */
+	min-width: calc((100% - 64px) / 5); /* Show 5 cards at once (gap is 16px * 4 = 64px) */
+	width: calc((100% - 64px) / 5);
 	background: #fff; /* White card background */
 	border-radius: 8px; /* Rounded corners */
 	box-shadow: 0 2px 8px rgba(0,0,0,0.08); /* Soft shadow */
